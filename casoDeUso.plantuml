@@ -1,0 +1,31 @@
+@startuml
+    left to right direction
+    !theme cerulean
+    :Farma\nceutico: as F1
+    :Caixo: as C1
+    (Pesquisar Remédios\n por Laboratório) as CU001
+    (Consultar Cadastro de Remédio) as CU002
+    (Verificar Historico de Vendas) as CU003
+    (Gerenciar Laboratório) as CU004
+    (Finalizar Venda) as CU005
+    (Atualizar Estoque) as CU006
+
+
+    F1 -- CU001
+    F1 -- CU002 
+    C1 -- CU003
+    C1 -- CU005
+    F1 -- CU004
+
+    CU001 <.. CU004 : <<extend>>
+    CU005 ..> CU006 : <<include>>
+
+@enduml
+
+/'
+
+extends == exceção
+include == separação de casos de uso
+https://plantuml.com/use-case-diagram
+
+'\
